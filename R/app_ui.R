@@ -10,7 +10,43 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("statConcepts")
+      shinyjs::useShinyjs(),
+      theme = bslib::bs_theme(
+        # Colors (background, foreground, primary)
+        bg = 'white',
+        fg = '#06436e',
+        primary = colorspace::lighten('#06436e', 0.3),
+
+        # Fonts (Use multiple in case a font cannot be displayed)
+        base_font = c('Source Sans Pro',  'Lato', 'Merriweather', 'Roboto Regular', 'Cabin Regular'),
+        heading_font = c('Oleo Script', 'Prata', 'Roboto', 'Playfair Display', 'Montserrat'),
+        font_scale = 1
+      ),
+      navbarPage(
+        'Statistical Concepts',
+        tabPanel(
+          "Variance of the sample variance",
+          mod_var_of_sample_var_ui("var_of_sample_var_1")
+        ),
+        tabPanel(
+          "Kernel density estimator",
+          mod_kernel_density_estimator_ui("kernel_density_estimator_1"),
+        ),
+        tabPanel(
+          "Confidence intervals",
+          mod_confidence_intervals_ui("confidence_intervals_1")
+        ),
+        tabPanel(
+          'About',
+          fluidRow(
+            # White space left and right avoids wall of text.
+            column(2),
+            column(8, div(includeMarkdown('inst/app/www/about.md'))),
+            column(2)
+          )
+        )
+      )
+
     )
   )
 }
@@ -33,7 +69,7 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "statConcepts"
+      app_title = "Statistical Concepts"
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()

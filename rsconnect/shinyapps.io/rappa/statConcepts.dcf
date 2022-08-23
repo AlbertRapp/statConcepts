@@ -1,0 +1,13 @@
+name: statConcepts
+title: statConcepts
+username:
+account: rappa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6830374
+bundleId: 6230538
+url: https://rappa.shinyapps.io/statConcepts/
+when: 1661280825.1947
+lastSyncTime: 1661280825.19472
+asMultiple: FALSE
+asStatic: FALSE
