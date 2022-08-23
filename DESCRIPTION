@@ -1,0 +1,13 @@
+Package: statConcepts
+Title: Statistical Concepts
+Version: 0.0.0.9000
+Authors@R: person('Albert', 'rapp', email = 'info@albert-rapp.de', role = c('cre', 'aut'))
+Description: This is a app demonstrating a few statistical concepts.
+License: GPL (>= 3)
+Imports: 
+    config (>= 0.3.1),
+    golem (>= 0.3.3),
+    shiny (>= 1.7.1)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
